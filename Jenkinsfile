@@ -21,6 +21,11 @@ pipeline {
                     cd myproject
                     cp myproject/.env.example myproject/.env
                     ./manage.py test'''
+            }
+        }
+
+        stage("Test Deployment"){
+            steps{
                 sh '''
                    echo pwd'''
             }
