@@ -3,7 +3,7 @@ pipeline {
 
 
     stages {
-        stage('Run ansible playbook for Django') {
+        stage('Run ansible to run Django app to deployment VM') {
             steps {
                 sh '''
                     cd ~/workspace/ansible-project/
