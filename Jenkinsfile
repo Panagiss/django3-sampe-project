@@ -23,7 +23,7 @@ pipeline {
                     ./manage.py test'''
             }
         }
-
+        //testing
         stage("Test Deployment"){
             steps{
                 sh '''
