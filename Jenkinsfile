@@ -7,6 +7,7 @@ pipeline {
             steps {
                 sh '''
                     cd ~/workspace/ansible-project/
+                    echo $WORKSPACE
                     ansible-playbook playbooks/django-project-install.yml
                 '''
             }
