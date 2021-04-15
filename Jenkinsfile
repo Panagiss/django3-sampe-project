@@ -6,7 +6,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Get some code from a GitHub repository
-                git branch: 'main', url: 'https://github.com/tsadimas/django3-sampe-project.git'
+                git branch: 'main', url: 'https://github.com/Panagiss/django3-sampe-project.git'
 
                 
             }
@@ -15,7 +15,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh '''
-                    python3.9 -m venv myvenv
+                    python3 -m venv myvenv
                     source myvenv/bin/activate
                     pip install -r requirements.txt
                     cd myproject
