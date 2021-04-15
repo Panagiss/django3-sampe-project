@@ -6,7 +6,8 @@ pipeline {
         stage('Run ansible playbook for Django') {
             steps {
                 sh '''
-                    pwd    
+                    cd ~/workspace/ansible-project/
+                    ansible-playbook playbooks/django-project-install.yml
                 '''
             }
         }
