@@ -21,6 +21,8 @@ pipeline {
                     cd myproject
                     cp myproject/.env.example myproject/.env
                     ./manage.py test'''
+                sh '''
+                   echo pwd'''
             }
         }
     }
