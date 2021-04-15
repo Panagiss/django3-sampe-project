@@ -6,7 +6,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Get some code from a GitHub repository
-                git branch: 'main', url: 'https://github.com/Panagiss/django3-sampe-project.git'
+                git branch: 'master', url: 'https://github.com/Panagiss/django3-sampe-project.git'
 
                 
             }
@@ -27,7 +27,7 @@ pipeline {
         stage("Test Deployment"){
             steps{
                 sh '''
-                   echo pwd'''
+                   pwd'''
             }
         }
     }
