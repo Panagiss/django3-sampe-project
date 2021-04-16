@@ -93,7 +93,19 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 # Parse database connection url strings like psql://user:pass@127.0.0.1:8458/db
 DATABASES = {
     # read os.environ['DATABASE_URL'] and raises ImproperlyConfigured exception if not found
-    'default': env.db(),
+    'default':{
+        'ENGINE': env('DATABASE_ENGINE'),
+
+        'NAME': env('DATABASE_NAME'),
+
+        'USER': env('DATABASE_USER'),
+
+        'PASSWORD': env('DATABASE_PASSWORD'),
+
+        'HOST': env('DATABASE_HOST'),
+
+        'PORT': env('DATABASE_PORT'),
+    },
     # read os.environ['SQLITE_URL']
     'extra': env.db('SQLITE_URL', default='sqlite:///.db.sqlite3')
 }
