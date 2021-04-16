@@ -3,11 +3,19 @@ pipeline {
 
 
     stages {
+        stage('Install Postgres Role with Ansible Galaxy') {
+            steps {
+                sh '''
+                    ansible-galaxy install geerlingguy.postgresql
+                '''
+            }
+        }
         stage('Install Postgres for Django App') {
             steps {
                 sh '''
                     cd ~/workspace/ansible-project/
                     echo $WORKSPACE
+                    pwd
                     ansible-playbook playbooks/postgres.yml
                 '''
             }
@@ -17,6 +25,7 @@ pipeline {
                 sh '''
                     cd ~/workspace/ansible-project/
                     echo $WORKSPACE
+                    pwd
                     ansible-playbook playbooks/django-project-install.yml
                 '''
             }
